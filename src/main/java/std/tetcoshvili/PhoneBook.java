@@ -1,10 +1,20 @@
 package std.tetcoshvili;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class PhoneBook {
 
-    // Создать пустой метод-заглушку add в классе PhoneBook,
-    // который только возвращает 0.
+
+    private Map<String, String> contacts = new TreeMap<>();
+
     public int add(String name, String number) {
-        return 0;
+        if (name == null || name.trim().isEmpty() || number == null || number.trim().isEmpty()) {
+            return contacts.size();
+        }
+        if (!contacts.containsKey(name)) {
+            contacts.put(name, number);
+        }
+        return contacts.size();
     }
 }
