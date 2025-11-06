@@ -17,4 +17,11 @@ public class PhoneBook {
         }
         return contacts.size();
     }
+
+    // Создать пустой метод-заглушку findByNumber в классе PhoneBook,
+    // который только возвращает null.
+    public String findByNumber(String number) {
+        return null; // Заглушка возвращает null
+    }
+
 }
