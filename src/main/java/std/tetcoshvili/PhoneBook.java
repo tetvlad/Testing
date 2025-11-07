@@ -20,8 +20,20 @@ public class PhoneBook {
 
     // Создать пустой метод-заглушку findByNumber в классе PhoneBook,
     // который только возвращает null.
+
+    //Реализовать метод findByNumber так, чтобы все тесты проходили.
     public String findByNumber(String number) {
-        return null; // Заглушка возвращает null
+        if (number == null || number.trim().isEmpty()) {
+            return null;
+        }
+
+        for (Map.Entry<String, String> entry : contacts.entrySet()) {
+            if (entry.getValue().equals(number)) {
+                return entry.getKey(); // Совпадение
+            }
+        }
+        return null; // А это для теста где номер не найден и возвращаем null
     }
+
 
 }
